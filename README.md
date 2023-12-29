@@ -1,4 +1,12 @@
-# APB_BUS
+# About Vaaman
+Vaaman is a high-performance edge computing board, featuring a six-core ARM CPU and an FPGA with 112,128 logic cells. Its unique design makes it ideal for addressing many challenges unmet by current products. With a 300-MBps link between FPGA and CPU, Vaaman is optimized for hardware acceleration and excels at parallel computing. Vaaman’s versatility extends to its comprehensive range of interfaces, including PCI, HDMI, USB, MIPI, audio, Ethernet, Wi-Fi, Bluetooth, BLE, LVDS, and GPIOs.
+
+Vaaman accelerates your most demanding edge-computing scenarios.
+
+# APB BUS Exmple
+
+This example shows you how to design and develop APB bus on VAAMAN's FPGA. It explains you a process of adding UART->APB->UART.
+
 
 # Project README: UART-APB_UART
 
