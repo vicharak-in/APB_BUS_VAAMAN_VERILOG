@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module transmitter #(parameter clks_per_bit = 868)(
+module transmitter #(parameter clks_per_bit = 50)(
   input clk,
   input valid,
   input [7:0] din,
@@ -32,6 +32,7 @@ module transmitter #(parameter clks_per_bit = 868)(
   reg [3:0] state = 0;
   reg [13:0] counter1 = 0;
   reg [3:0] counter2 = 0;
+  reg [7:0] r_din = 0;
   
   parameter IDLE = 3'b000;
   parameter START_BIT = 3'b001;
@@ -55,6 +56,7 @@ module transmitter #(parameter clks_per_bit = 868)(
       valid_test = 0;
         if(valid) begin 
           state <= START_BIT;
+          r_din <= din;
           tx_busy <= 1;
         end
         else begin
@@ -80,7 +82,7 @@ module transmitter #(parameter clks_per_bit = 868)(
       else begin
         counter1 <= 0;
         if(counter2 <= 4'b0111) begin
-            dout <= din[counter2];
+            dout <= r_din[counter2];
             counter2 <= counter2 + 1;
             state <= DATA_BIT;
           end 

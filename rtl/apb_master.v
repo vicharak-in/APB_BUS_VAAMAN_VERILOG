@@ -64,13 +64,8 @@ end
 
 SETUP: begin
   pselx_reg <= pselx_m;
-  penable <= 1;
-    if(pwrite_m == 1) begin   
-      paddr_reg <= paddr_m;
-      pwrite_reg <= pwrite_m;
-      pwdata_reg <= pwdata_m;
-      state <= ACCESS;
-    end
+  penable <= 1'b0;
+  state <= ACCESS;
 end
 
 ACCESS: begin
@@ -84,9 +79,18 @@ ACCESS: begin
     end else if ((pready_s2 == 1) && (valid == 1)) begin
       state <= SETUP;
     end */
+    penable <= 1'b1;
+    if(pwrite_m == 1) begin   
+      paddr_reg <= paddr_m;
+      pwrite_reg <= pwrite_m;
+      pwdata_reg <= pwdata_m;
+    end
     if(pready) begin
-     penable <= 0;
      state <= IDLE;
+     penable <= 1'b0;
+    end
+    else begin
+      state <= ACCESS;
     end
    /* else if (pready_s2) begin
       penable <= 0;

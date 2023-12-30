@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module receiver #(parameter clks_per_bit = 868)(
+module receiver #(parameter clks_per_bit = 50)(
   input clk,
   input din,
   output reg [7:0] dout = 0,
