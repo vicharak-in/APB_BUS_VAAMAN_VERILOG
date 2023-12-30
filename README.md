@@ -62,7 +62,7 @@ These modules collect 32 bits of data, break them into chunks of 8 bits, and sen
 
 These UART transmitter modules receive 8 bits of data at a time and follow a state machine comprising start bit, data bit, and stop bit states to give the data out serially.
 
-![image](https://github.com/vicharak-in/APB_BUS_VAAMAN_VERILOG/assets/114066925/3ad9c8d5-5610-4f64-a4e6-b3dfba69dce8)
+![image](https://github.com/vicharak-in/APB_BUS_VAAMAN_VERILOG/assets/114066925/818a4eef-98cd-445d-aa69-5faa9a8d1aab)
 
 
 ### 8. Mux
