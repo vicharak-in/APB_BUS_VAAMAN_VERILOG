@@ -58,7 +58,7 @@ These modules collect 32 bits of data, break them into chunks of 8 bits, and sen
 ![image](https://github.com/vicharak-in/APB_BUS_VAAMAN_VERILOG/assets/114066925/3d4f26cc-d3e7-4497-b1b0-8eb23f4c8c0d)
 
 
-### 7. Transmitter Modules (Transmitter for Slave 1 and Transmitter for Slave 2)
+### 7. Transmitter Module (Transmitter for Slave 1 and Transmitter for Slave 2)
 
 These UART transmitter modules receive 8 bits of data at a time and follow a state machine comprising start bit, data bit, and stop bit states to give the data out serially.
 
